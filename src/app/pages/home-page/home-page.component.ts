@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import {BookService} from '../../shared/services/book.service';
 import {Book} from '../../shared/interfaces';
+import {BasketService} from '../../shared/services/basket.service';
+import {AuthService} from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-home-page',
@@ -88,7 +90,17 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private bookService: BookService,
+    private basketService: BasketService,
+    private auth: AuthService,
   ) { }
+
+  addToBasket(id: string): void {
+    if (this.auth.isAuthenticated()) {
+      this.basketService.addToBasket(id).subscribe(() => {
+        this.basketService.getCount();
+      });
+    }
+  }
 
   ngOnInit(): void {
     this.bookService.getAll().subscribe(books => {
