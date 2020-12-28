@@ -1,0 +1,61 @@
+<div *ngIf="showPreview" class="container">
+  <div class="preview">
+    <div class="title">Добро пожаловать в наш уникальный тест для подбора книг под Ваши интересы!</div>
+
+    <div class="content">
+      <div class="image"><img src="../../../assets/images/quiz_preview.jpg"></div>
+
+      <div class="description">
+        После прохождения теста Вам будут предложены варианты, наиболее подходящие под Ваши интересы.
+        Вы сможете сразу же купить понравившиеся экземпляры!
+        <button (click)="showPreview = false">Пройти тест!</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="!showPreview" class="quiz-container">
+  <div class="quiz">
+    <div class="title">{{activeQ + 1}} вопрос из 5</div>
+
+    <div class="content">
+      <div class="image"><img src="../../../assets/images/unnamed.jpg"></div>
+
+      <div class="description">
+        <h2>{{quiz[activeQ].title}}</h2>
+        <ul>
+          <li (click)="nextQuestion()">{{quiz[activeQ].q1}}</li>
+          <li (click)="nextQuestion()">{{quiz[activeQ].q2}}</li>
+          <li (click)="nextQuestion()">{{quiz[activeQ].q3}}</li>
+          <li (click)="nextQuestion()">{{quiz[activeQ].q4}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="wrapper">
+    <div class="column">
+      <div class="title bold">BOOKMARKET.RU</div>
+      <div class="content">Yekaterinburg, Mira street, house 32, 310 flat</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Магазин</div>
+      <div class="content bold">FAQ</div>
+      <div class="content">Доставка</div>
+      <div class="content">Политика конфиденциальности</div>
+      <div class="content">Способы оплаты</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Социальные сети</div>
+      <div class="content">Facebook</div>
+      <div class="content">Twitter</div>
+      <div class="content">Instagram</div>
+    </div>
+  </div>
+</footer>

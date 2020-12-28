@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="filters">
+
+  </div>
+  <div class="content">
+    <div class="title">Каталог</div>
+
+    <div class="card" *ngFor="let book of paginationService.chunkList">
+      <div class="image">
+        <img [src]="book.img">
+      </div>
+
+      <div class="props">
+        <div class="text">Жанр: {{book.genre}}</div>
+        <div class="text">Автор: {{book.author}}</div>
+        <div class="text">Издательство: {{book.publishingHouse}}</div>
+        <div class="text">Редактор: {{book.editorialOffice}}</div>
+        <div class="text">Серия: {{book.series}}</div>
+
+        <button [routerLink]="['/book', book.id]">Открыть</button>
+      </div>
+      <div class="price">
+        <div class="cost" *ngIf="!book.discountIsActive">Цена за книгу: {{book.price}} Руб</div>
+        <div class="extra"
+             *ngIf="book.discountIsActive">Цена за книгу: {{book.price - (book.price * (book.discount / 100)) }} Руб!
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination-container">
+      <app-pagination *ngIf="paginationService.books && paginationService.books.length > itemsOnPage"></app-pagination>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrapper">
+    <div class="column">
+      <div class="title bold">BOOKMARKET.RU</div>
+      <div class="content">Yekaterinburg, Mira street, house 32, 310 flat</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Магазин</div>
+      <div class="content bold">FAQ</div>
+      <div class="content">Доставка</div>
+      <div class="content">Политика конфиденциальности</div>
+      <div class="content">Способы оплаты</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Социальные сети</div>
+      <div class="content">Facebook</div>
+      <div class="content">Twitter</div>
+      <div class="content">Instagram</div>
+    </div>
+  </div>
+</footer>

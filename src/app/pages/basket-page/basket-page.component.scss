@@ -1,0 +1,124 @@
+@import "src/styles";
+
+.container {
+  min-height: 90vh;
+  border: 5px solid $main-blue;
+
+  .header {
+    height: 70px;
+    border-bottom: 5px solid $main-blue;
+    display: flex;
+    align-items: flex-end;
+    padding: 4px 30px;
+
+    .title {
+      width: 60%;
+      color: #1A74A4;
+      font-family: 'Lato';
+      font-size: 30px;
+      text-align: left;
+    }
+
+    .sheet {
+      width: 60%;
+      color: #1A74A4;
+      font-family: 'Lato';
+      font-size: 18px;
+      text-align: left;
+    }
+  }
+
+  .content {
+    display: flex;
+    min-height: 80vh;
+
+    .basket {
+      width: 75%;
+    }
+    .action {
+      width: 25%;
+      border-left: 5px solid $main-blue;
+      min-height: 80vh;
+      height: inherit;
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 1000;
+}
+
+.order {
+  border-radius: 5px;
+  width: 700px;
+  min-height: 500px;
+  background: $main-blue;
+  position: absolute;
+  top: 15%;
+  z-index: 10000;
+  left: calc(50% - 350px);
+  display: flex;
+  transform: scale(0);
+  flex-direction: column;
+  align-items: center;
+  transition: .4s ease-in-out;
+
+  .close {
+    transform: scale(1.2);
+    position: absolute;
+    color: $main-yellow;
+    right: 10px;
+    top: 5px;
+  }
+
+  h2 {
+    margin-top: 50px;
+    color: $main-yellow;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 80%;
+
+    .input {
+      margin-bottom: 10px;
+
+      display: flex;
+      flex-direction: column;
+      label {
+        color: $main-blue;
+      }
+      input {
+        outline: none;
+      }
+    }
+
+    .change-method {
+      text-align: center;
+    }
+    .swap {
+      color: $main-blue;
+      text-align: center;
+      text-decoration: underline #1A74A4;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto 40px auto;
+      border: none;
+      background: $main-blue;
+      padding: 10px 50px;
+      border-radius: 10px;
+      color: #fff;
+    }
+  }
+}
+.active {
+  transform: scale(1);
+}

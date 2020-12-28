@@ -1,0 +1,56 @@
+<div class="container">
+  <div *ngIf="book" class="book-prop">
+    <div class="row">
+      <div class="image">
+        <img [src]="book.img" alt="">
+      </div>
+
+      <div class="properties">
+        <div class="text">Автор: {{book.author}}</div>
+        <div class="text">Переводчик: {{book.translator}}</div>
+        <div class="text">Редактор: {{book.editorialOffice}}</div>
+        <div class="text">Издательство: {{book.publishingHouse}}</div>
+        <div class="text">Серия: {{book.series}}</div>
+
+        <div class="price">
+          <div class="cost">Цена для всех - {{book.price}} руб</div>
+          <div *ngIf="book.discountIsActive" class="cost">
+            Цена для вас - <span class="sale">{{book.price - (book.price * (book.discount / 100)) }} руб</span></div>
+        </div>
+
+        <button (click)="addToBasket()">
+          Добавить в корзину
+        </button>
+      </div>
+    </div>
+
+    <div class="book-desc">
+      <p>Аннотация к книге "{{book.title}}":</p>
+      {{book.annotation}}
+    </div>
+  </div>
+
+</div>
+<footer>
+  <div class="wrapper">
+    <div class="column">
+      <div class="title bold">BOOKMARKET.RU</div>
+      <div class="content">Yekaterinburg, Mira street, house 32, 310 flat</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Магазин</div>
+      <div class="content bold">FAQ</div>
+      <div class="content">Доставка</div>
+      <div class="content">Политика конфиденциальности</div>
+      <div class="content">Способы оплаты</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Социальные сети</div>
+      <div class="content">Facebook</div>
+      <div class="content">Twitter</div>
+      <div class="content">Instagram</div>
+    </div>
+  </div>
+</footer>

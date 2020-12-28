@@ -1,0 +1,52 @@
+<header class="header">
+  <div class="logo" routerLink="/">
+    <div class="book">BOOK</div>
+    <div class="market">MARKET</div>
+  </div>
+  <div class="actions">
+<!--    <div class="page">О компании</div>-->
+    <div class="page" [routerLink]="['/catalog']">Каталог</div>
+    <div *ngIf="!authService.isAuthenticated()" class="page" (click)="showModal = true">Войти</div>
+    <div *ngIf="authService.isAuthenticated()" class="page" >Заказы</div>
+    <div *ngIf="authService.isAuthenticated()" class="page" (click)="logout()">Выйти</div>
+    <div class="basket" [routerLink]="['/basket']">
+      <img src="./assets/images/basket.png" alt="basket-image">
+      <div class="badge">{{basketCount}}</div>
+    </div>
+  </div>
+</header>
+
+<div *ngIf="showModal" (click)="showModal = false" class="backdrop">
+</div>
+<div [ngClass]="{active: showModal}" class="authorization">
+  <div  (click)="showModal = false" class="close" >✖</div>
+
+  <h2 *ngIf="register">Регистрация</h2>
+  <h2 *ngIf="!register">Авторизация</h2>
+  <form [formGroup]="form">
+    <div class="input">
+      <label for="qqq">Email</label>
+      <input formControlName="email" type="text" id="qqq">
+    </div>
+    <div class="input">
+      <label for="qqq1">Пароль</label>
+      <input formControlName="password" type="text" id="qqq1">
+    </div>
+    <div *ngIf="register" class="input">
+      <label for="qqq12">Повторите пароль</label>
+      <input formControlName="repeatPassword" type="text" id="qqq12">
+    </div>
+
+    <div *ngIf="!register" class="change-method">У вас еще нет аккаунта?</div>
+     <div *ngIf="!register" class="swap" (click)="register = true">Регистрация</div>
+
+    <div *ngIf="register" class="change-method">У вас уже есть аккаунт?</div>
+    <div *ngIf="register" class="swap" (click)="register = false">Авторизация</div>
+
+    <button [disabled]="!form.valid || form.value.password !== form.value.repeatPassword" *ngIf="register" (click)="signup()">Зарегистрироваться</button>
+    <button
+      [disabled]="form.get('email').invalid || form.get('password').invalid"
+      *ngIf="!register" type="submit" (click)="login()">Войти</button>
+  </form>
+</div>
+<router-outlet></router-outlet>

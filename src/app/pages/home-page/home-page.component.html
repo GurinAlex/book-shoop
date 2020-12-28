@@ -1,0 +1,118 @@
+<div class="carousel-container">
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide>
+    <div class="slide">
+      <div class="slide-info">
+        <div class="info">
+          Классика в моде - скидка 15% при покупке прозы от 600 рублей!
+        </div>
+        <img class="img-slider" src="./assets/images/main_slider_books.jpg">
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template carouselSlide>
+    <div class="slide">
+      <div class="slide-info">
+        <div class="info">
+          Классика в моде - скидка 15% при покупке прозы от 600 рублей!
+        </div>
+        <img class="img-slider" src="./assets/images/main_slider_books.jpg">
+      </div>
+    </div>
+  </ng-template>
+</owl-carousel-o>
+</div>
+
+<div class="bestsellers" >
+    <div class="domain">BOOKMARKET.RU</div>
+    <div class="title">БЕСТСЕЛЛЕРЫ</div>
+
+  <owl-carousel-o [options]="customOptionsLite">
+    <ng-template *ngFor="let bestseller of bestsellers" carouselSlide>
+      <div class="slide-lite">
+        <div [routerLink]="['/book', bestseller.id]" class="image-card">
+          <img [src]="bestseller.img">
+          <div class="fast-search">Быстрый просмотр</div>
+        </div>
+
+        <button class="add-basket">Добавить в корзину</button>
+      </div>
+    </ng-template>
+    <!--  <ng-template carouselSlide><img class="img-slider" src="./assets/images/basket.png"></ng-template>-->
+  </owl-carousel-o>
+</div>
+
+<div class="recommendation">
+  <div class="title">РЕКОМЕНДАЦИИ</div>
+  <div class="test-info-wrapper">
+    <div class="subtitles">
+      <div class="subtitle">Вокруг так много хороших книг, что голова идёт кругом.</div>
+      <div class="subtitle">Как выбрать среди них ту, которую хочется прочесть немедленно?</div>
+      <div class="subtitle">За что взяться именно вам, расскажет наш тест. Пройдите прямо сейчас!</div>
+    </div>
+    <div class="test-button">
+      <button routerLink="/test">Пройти тест!</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="articles">
+  <div class="title">СТАТЬИ</div>
+
+  <owl-carousel-o [options]="customOptionsMiddle">
+    <ng-template carouselSlide>
+     <div class="slide-last">
+        <div class="image-block">
+          <img src="./assets/images/last_slider_image1.jpg">
+        </div>
+
+       <div class="info">
+         <div class="title">КАК ЧИТАТЬ ТЁМНЫЕ АЛЛЕИ</div>
+         <div class="subtitle">На что обратить внимание, чтобы понять знаменитый рассказ Ивана Бунина</div>
+       </div>
+     </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="slide-last">
+        <div class="image-block">
+          <img src="./assets/images/last_slider_image2.jpeg">
+        </div>
+
+        <div class="info">
+          <div class="title">Lorem ipsum dolor sit amet.</div>
+          <div class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, sit!</div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+  <div class="button-articles">
+    <button>Смотреть все статьи</button>
+  </div>
+</div>
+
+<footer>
+  <div class="wrapper">
+    <div class="column">
+      <div class="title bold">BOOKMARKET.RU</div>
+      <div class="content">Yekaterinburg, Mira street, house 32, 310 flat</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Магазин</div>
+      <div class="content bold">FAQ</div>
+      <div class="content">Доставка</div>
+      <div class="content">Политика конфиденциальности</div>
+      <div class="content">Способы оплаты</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Социальные сети</div>
+      <div class="content">Facebook</div>
+      <div class="content">Twitter</div>
+      <div class="content">Instagram</div>
+    </div>
+  </div>
+</footer>

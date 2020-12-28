@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="header">
+    <div class="title">Корзина</div>
+    <div class="sheet">Удалить всё</div>
+  </div>
+
+  <div class="content">
+    <div class="basket">
+
+    </div>
+
+    <div class="action">
+      <div class="text">Товаров в корзине 0</div>
+      <div class="text">Сумма заказа</div>
+      <div class="extra">Сумма скидки</div>
+
+      <div class="finally">Итого без учета доставки
+        <div>425</div>
+      </div>
+
+      <div class="finally">Передадим в службу доставки
+        <div>6 декабря</div>
+      </div>
+
+       <button (click)="showModal = true">Оформить заказ</button>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="wrapper">
+    <div class="column">
+      <div class="title bold">BOOKMARKET.RU</div>
+      <div class="content">Yekaterinburg, Mira street, house 32, 310 flat</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Магазин</div>
+      <div class="content bold">FAQ</div>
+      <div class="content">Доставка</div>
+      <div class="content">Политика конфиденциальности</div>
+      <div class="content">Способы оплаты</div>
+    </div>
+
+    <div class="column">
+      <div class="title">Социальные сети</div>
+      <div class="content">Facebook</div>
+      <div class="content">Twitter</div>
+      <div class="content">Instagram</div>
+    </div>
+  </div>
+</footer>
+
+<div *ngIf="showModal" (click)="showModal = false" class="backdrop">
+</div>
+<div [ngClass]="{active: showModal}" class="order">
+  <div  (click)="showModal = false" class="close" >✖</div>
+
+  <h2>Оформить заказ</h2>
+<!--  <form >-->
+<!--    <div class="input">-->
+<!--      <label for="qqq">Email</label>-->
+<!--      <input formControlName="email" type="text" id="qqq">-->
+<!--    </div>-->
+<!--    <div class="input">-->
+<!--      <label for="qqq1">Пароль</label>-->
+<!--      <input formControlName="password" type="text" id="qqq1">-->
+<!--    </div>-->
+
+<!--    <button>Войти</button>-->
+<!--  </form>-->
+</div>

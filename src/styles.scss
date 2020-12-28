@@ -1,1 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// Variables //
+$main-blue: #1A74A4;
+$main-yellow: #F2F0AD;
+// --Variables-- //
+
+.owl-carousel .owl-prev {
+  position: absolute;
+  left: 0;
+  color: darkgray !important;
+  top: 40%;
+  font-size: 27px !important;
+  border: none;
+  background: none !important;
+}
+.owl-carousel .owl-next {
+  position: absolute;
+  right: 0;
+  color: darkgray !important;
+  top: 40%;
+  font-size: 27px !important;
+  border: none;
+  background: none !important;
+}
+
+footer {
+  padding: 30px 20px 50px 50px;
+  background: $main-blue;
+
+  .wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+
+      .title {
+        color: #fff;
+        text-align: left;
+        font-size: 18px;
+        font-family: "Lato", serif;
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+
+      .content {
+        color: #fff;
+        text-align: left;
+        font-size: 16px;
+        margin-top: 9px;
+        font-family: "Lato", serif;
+        font-weight: 400;
+      }
+    }
+  }
+  .bold {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,76 @@
+@import "src/styles";
+
+.container {
+  display: flex;
+  min-height: 90vh;
+  border: 5px solid $main-blue;
+  padding: 20px;
+
+  .book-prop {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      display: flex;
+
+      .image {
+        width: 20vw;
+        min-height: 400px;
+        background: #f3f3f3;
+        margin-right: 50px;
+        img {}
+      }
+      .properties {
+        .text {
+          color: $main-blue;
+          font-family: 'Lato';
+          font-size: 21px;
+          line-height: 27px;
+          text-align: left;
+          margin-bottom: 5px;
+        }
+
+        .price {
+          margin-top: 30px;
+
+          .cost {
+            color: $main-blue;
+            font-family: 'Lato';
+            font-size: 26px;
+            line-height: 33px;
+            text-align: left;
+
+            .sale {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+
+    .book-desc {
+      color: $main-blue;
+      font-family: 'Lato';
+      font-size: 21px;
+      line-height: 27px;
+      text-align: left;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+  }
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 50px;
+  border: none;
+  background: $main-blue;
+  border-radius: 5px;
+  color: #fff;
+  font-family: 'Lato';
+  font-weight: 500;
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}

@@ -1,0 +1,162 @@
+@import "src/styles";
+.header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  .logo {
+    outline: none;
+    height: 26px;
+    padding: 7px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $main-blue;
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 11px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .book {
+      color: #fff;
+    }
+    .market {
+      height: 18px;
+      color: $main-blue;
+      background: #fff;
+      margin-left: 10px;
+      width: 85px;
+      text-align: center;
+
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    .page {
+      outline: none;
+      margin-right: 20px;
+      font-family: "Lato", sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: $main-blue;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .basket {
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      img {
+        width: 30px;
+
+      }
+      .badge {
+        position: absolute;
+        top: -5px;
+        left: 84%;
+        border: 1px solid $main-blue;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        font-size: 9px;
+        font-family: "Lato", sans-serif;
+      }
+    }
+  }
+}
+
+.authorization {
+  border-radius: 5px;
+  width: 500px;
+  min-height: 400px;
+  background: $main-yellow;
+  position: absolute;
+  top: 20%;
+  z-index: 10000;
+  left: calc(50% - 250px);
+  transform: translateY(-600px);
+  transition: .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .close {
+    transform: scale(1.2);
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+
+  h2 {
+    margin-top: 50px;
+    color: $main-blue;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 80%;
+
+    .input {
+      margin-bottom: 10px;
+
+      display: flex;
+      flex-direction: column;
+      label {
+        color: $main-blue;
+      }
+      input {
+        outline: none;
+      }
+    }
+
+    .change-method {
+      text-align: center;
+    }
+    .swap {
+      color: $main-blue;
+      text-align: center;
+      text-decoration: underline #1A74A4;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto 40px auto;
+      border: none;
+      background: $main-blue;
+      padding: 10px 50px;
+      border-radius: 10px;
+      color: #fff;
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 1000;
+}
+
+.active {
+  transform: translateY(0);
+}
+
+.disabled {
+  opacity: .5;
+}
