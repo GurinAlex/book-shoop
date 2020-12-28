@@ -14,6 +14,10 @@ export class BookService {
     return this.http.get<Book []>(`${environment.api_server}/books`);
   }
 
+  getAllWithQuery(query: string): Observable<Book []> {
+    return this.http.get<Book []>(`${environment.api_server}/books`, { params: {genre: query}});
+  }
+
   getById(bookId: string): Observable<Book> {
     return this.http.get<Book>(`${environment.api_server}/book/${bookId}`);
   }

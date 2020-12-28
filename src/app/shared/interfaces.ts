@@ -21,3 +21,12 @@ export interface Book {
   discountPrice?: number;
   isBestseller: boolean;
 }
+
+export interface Order {
+  city: string;
+  address: string;
+  fio: string;
+  email: string;
+  phone: string;
+  bookIds: string;
+}

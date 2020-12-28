@@ -20,11 +20,21 @@
     }
 
     .sheet {
+      display: flex;
+      cursor: pointer;
       width: 60%;
       color: #1A74A4;
       font-family: 'Lato';
       font-size: 18px;
       text-align: left;
+
+      img {
+        margin-top: 3px;
+        cursor: pointer;
+        width: 20px;
+        height: 21px;
+        margin-right: 4px;
+      }
     }
   }
 
@@ -39,10 +49,115 @@
       width: 25%;
       border-left: 5px solid $main-blue;
       min-height: 80vh;
+      padding: 10px 0;
       height: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .text {
+        color: $main-blue;
+        font-family: 'Lato';
+        font-size: 21px;
+        line-height: 29px;
+        text-align: left;
+      }
+
+      .finally {
+        margin-top: 20px;
+        color: $main-blue;
+        font-family: 'Lato';
+        font-size: 21px;
+        line-height: 29px;
+        text-align: left;
+
+        .bold {
+          font-weight: 800;
+          text-align: center;
+        }
+      }
+
+      button {
+        cursor: pointer;
+        outline: none;
+        margin-top: 40px;
+        background: none;
+        padding: 10px 50px;
+        background: $main-blue;
+        border: none;
+        color: #fff;
+      }
     }
   }
 }
+  .card {
+    position: relative;
+    display: flex;
+    height: 250px;
+    border-bottom: 1px solid $main-blue;
+    padding: 15px 10px 10px 70px;
+
+    .remove {
+      cursor: pointer;
+      display: flex;
+      position: absolute;
+      bottom: 20px;
+      right: 170px;
+
+      img {
+        width: 26px;
+        height: 27px;
+        margin-right: 3px;
+      }
+
+      button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: $main-blue;
+      }
+    }
+
+    .image {
+      height: 100%;
+      width: 20%;
+
+      img {
+        width: 70%;
+      }
+    }
+
+    .props {
+      width: 40%;
+      margin-top: 5px;
+      .text {
+        color: $main-blue;
+        font-family: 'Lato';
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 31px;
+        text-align: left;
+      }
+    }
+
+    .price {
+      margin-left: 20px;
+      font-family: 'Lato';
+      font-size: 20px;
+      line-height: 33px;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      width: 60%;
+
+      .extra {
+        color: #f95f62;
+      }
+      .cost {
+        color: #000;
+      }
+    }
+  }
 
 .backdrop {
   position: fixed;
@@ -79,7 +194,7 @@
 
   h2 {
     margin-top: 50px;
-    color: $main-yellow;
+    color: #fff;
     margin-bottom: 20px;
   }
 
@@ -88,14 +203,20 @@
 
     .input {
       margin-bottom: 10px;
-
       display: flex;
       flex-direction: column;
+
       label {
-        color: $main-blue;
+        //color: $main-yellow;
+        color: #fff;
       }
       input {
         outline: none;
+        background: $main-yellow;
+        color: $main-blue;
+        border: none;
+        height: 40px;
+        border-radius: 5px;
       }
     }
 
@@ -109,16 +230,25 @@
     }
 
     button {
+      cursor: pointer;
       display: block;
-      margin: 20px auto 40px auto;
+      margin: 20px 0 40px 0;
       border: none;
-      background: $main-blue;
+      background: $main-yellow;
       padding: 10px 50px;
       border-radius: 10px;
-      color: #fff;
+      color: $main-blue;
     }
   }
 }
+
+button.disabled {
+  cursor: crosshair;
+}
 .active {
   transform: scale(1);
+}
+
+.line {
+  text-decoration: line-through;
 }

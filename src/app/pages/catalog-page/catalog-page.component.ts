@@ -13,8 +13,8 @@ export class CatalogPageComponent implements OnInit {
 
   books: Book[];
   itemsOnPage = 5;
-  filter: FormGroup;
   filteredBooks: Book[];
+  filter = '';
 
   constructor(
     private bookService: BookService,
@@ -22,10 +22,20 @@ export class CatalogPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.bookService.getAll().subscribe(books => {
+    this.removeFilters();
+  }
+
+  applyFilters(): void {
+    this.bookService.getAllWithQuery(this.filter).subscribe(books => {
       this.books = books;
       this.paginationService.initPagination(this.books, this.itemsOnPage);
     });
   }
 
+  removeFilters(): void {
+    this.bookService.getAll().subscribe(books => {
+      this.books = books;
+      this.paginationService.initPagination(this.books, this.itemsOnPage);
+    });
+  }
 }

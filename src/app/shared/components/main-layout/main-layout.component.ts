@@ -28,12 +28,15 @@ export class MainLayoutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.basketService.getCount();
-    this.basketService.count$.subscribe(c => this.basketCount = c);
+    if (this.authService.isAuthenticated()) {
+      this.basketService.getCount();
+      this.basketService.count$.subscribe(c => this.basketCount = c);
+    }
   }
 
   logout(): void {
     this.authService.logout();
+    this.basketService.clearCount();
   }
 
   login(): void {
@@ -48,6 +51,7 @@ export class MainLayoutComponent implements OnInit {
     this.authService.login(user).subscribe(() => {
       this.form.reset();
       this.showModal = false;
+      this.basketService.getCount();
     });
   }
 
@@ -63,6 +67,10 @@ export class MainLayoutComponent implements OnInit {
     this.authService.signup(user).subscribe(() => {
       this.form.reset();
       this.showModal = false;
+
+      this.authService.login(user).subscribe(() => {
+        this.basketService.getCount();
+      });
     });
   }
 

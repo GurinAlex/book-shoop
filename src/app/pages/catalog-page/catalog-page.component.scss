@@ -7,6 +7,10 @@
   .filters {
     width: 20%;
     border-right: 1px solid $main-blue;
+    display: flex;
+    flex-direction: column;
+    color: $main-blue;
+    padding: 20px 10px;
   }
 
   .content {
@@ -69,7 +73,67 @@
     }
   }
 }
+.radio {
+  display: flex;
+  flex-direction: column;
 
+  .button {
+    display: flex;
+  }
+  div:first-of-type {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+  }
+
+  label {
+    margin-right: 15px;
+    line-height: 32px;
+  }
+
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 5px;
+
+    position: relative;
+    top: 4px;
+  }
+
+  input:checked {
+    border: 6px solid $main-blue;
+  }
+
+  button,
+  legend {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 0;
+    border: 0;
+    font-size: 14px;
+  }
+
+  button:hover,
+  button:focus {
+    color: #999;
+  }
+
+  button:active {
+    background-color: white;
+    color: $main-blue;
+    outline: $main-blue;
+  }
+}
 button {
   margin-top: 5px;
   padding: 8px 35px;

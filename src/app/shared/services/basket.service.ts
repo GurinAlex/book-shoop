@@ -32,7 +32,11 @@ export class BasketService {
     return this.http.delete(`${environment.api_server}/basket/bookDelete/${bookId}`);
   }
 
+  clearCount(): void {
+    this.count.next(null);
+  }
+
   addToBasket(bookId: string): Observable<any> {
-    return this.http.post<any>(`${environment.api_server}/basket/bookAdd/${bookId}/`, {});
+    return this.http.post<any>(`${environment.api_server}/basket/bookAdd/${bookId}`, {});
   }
 }

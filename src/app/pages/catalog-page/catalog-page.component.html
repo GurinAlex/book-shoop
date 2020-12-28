@@ -1,6 +1,67 @@
 <div class="container">
   <div class="filters">
+    <h2>Жанры</h2>
 
+    <div class="radio">
+      <div class="button">
+        <input type="radio" id="contactChoice1"
+               name="contact" value="Проза" [(ngModel)]="filter">
+        <label for="contactChoice1">Проза</label>
+      </div>
+
+      <div class="button">
+        <input type="radio" id="contactChoice2"
+               name="contact" [(ngModel)]="filter" value="Детектив">
+        <label for="contactChoice2">Детектив</label>
+      </div>
+
+      <div class="button">
+        <input type="radio" id="contactChoice3"
+               name="contact" [(ngModel)]="filter" value="Фантастика">
+        <label for="contactChoice3">Фантастика</label>
+      </div>
+
+      <div class="button">
+        <input type="radio" id="contactChoice4"
+               name="contact" [(ngModel)]="filter" value="Фэнтези">
+        <label for="contactChoice4">Фэнтези</label>
+      </div>
+
+      <div class="button">
+        <input type="radio" id="contactChoice5"
+               name="contact" [(ngModel)]="filter" value="Боевик">
+        <label for="contactChoice5">Боевик</label>
+      </div>
+
+      <div class="button">
+        <input type="radio" id="contactChoice6"
+               name="contact" [(ngModel)]="filter" value="Триллер">
+        <label for="contactChoice6">Триллер</label>
+      </div>
+
+      <div class="button">
+        <input type="radio" id="contactChoice7"
+               name="contact" [(ngModel)]="filter" value="Приключения">
+        <label for="contactChoice7">Приключения</label>
+      </div>
+
+      <div class="button">
+        <input type="radio" id="contactChoice8"
+               name="contact" [(ngModel)]="filter" value="Любовный роман">
+        <label for="contactChoice8">Любовный роман</label>
+      </div>
+
+      <div class="button">
+        <input type="radio" id="contactChoice9"
+               name="contact" [(ngModel)]="filter" value="Юмор и сатира">
+        <label for="contactChoice9">Юмор и сатира</label>
+      </div>
+
+    </div>
+    <div>
+      <button (click)="applyFilters()" type="submit">Применить</button>
+      <button (click)="removeFilters()" type="submit">Сбросить</button>
+    </div>
   </div>
   <div class="content">
     <div class="title">Каталог</div>
